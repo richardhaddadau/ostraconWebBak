@@ -1,56 +1,67 @@
 import React from "react";
+import SettingsItem from "@/Components/SettingsItem";
 
 const SettingsScreen = (props) => {
     return (
         <>
             <section className="py-6 px-4 flex flex-col items-center gap-4 grow overflow-y-auto">
+                <h3 className="w-full max-w-2xl text-center md:text-left font-bold text-primary-500 dark:text-gray-500 uppercase">
+                    Account Settings
+                </h3>
+
+                <SettingsItem
+                    title="Change nickname"
+                    type="text"
+                    options="Archer"
+                />
+
+                <SettingsItem
+                    title="Change handle"
+                    type="text"
+                    options="randy"
+                />
+
+                <SettingsItem
+                    title="Change email address"
+                    type="text"
+                    options="sterling@archer.com"
+                />
+
+                <SettingsItem
+                    title="Change password"
+                    type="text"
+                    options="*****"
+                />
+
+                <SettingsItem
+                    title="Show date of birth"
+                    type="toggle"
+                    options={true}
+                />
+
+                <h3 className="w-full max-w-2xl text-center md:text-left font-bold text-primary-500 uppercase">
+                    Privacy Settings
+                </h3>
+
+                <SettingsItem
+                    title="Secure app with pin"
+                    type={"pin"}
+                    options={5}
+                />
+
+                <SettingsItem title="Make profile private" type="toggle" />
+
+                <SettingsItem title="Allow sensitive material" type="toggle" />
+
+                <SettingsItem title="Open direct messaging" type="toggle" />
+
+                <SettingsItem title="Show date of birth" type="toggle" />
+
                 <h3 className="w-full max-w-2xl text-center md:text-left font-bold text-primary-500 uppercase">
                     Account Settings
                 </h3>
-                <div className="p-3 pb-6 flex flex-col md:flex-row items-center justify-between border-b-2 border-gray-300 text-left w-full max-w-2xl">
-                    <div className="font-bold text-primary-500 dark:text-white">
-                        Change nickname
-                    </div>
-                    <div className="flex flex-row gap-1.5 text-sm font-bold text-primary-300 dark:text-gray-700">
-                        Archer
-                    </div>
-                </div>
 
-                <div className="p-3 pb-6 flex flex-col md:flex-row items-center justify-between border-b-2 border-gray-300 text-left w-full max-w-2xl">
-                    <div className="font-bold text-primary-500 dark:text-white">
-                        Change handle
-                    </div>
-                    <div className="flex flex-row gap-1.5 text-sm font-bold text-primary-300 dark:text-gray-700">
-                        randy
-                    </div>
-                </div>
-
-                <div className="p-3 pb-6 flex flex-col md:flex-row items-center justify-between border-b-2 border-gray-300 text-left w-full max-w-2xl">
-                    <div className="font-bold text-primary-500 dark:text-white">
-                        Change email address
-                    </div>
-                    <div className="flex flex-row gap-1.5 text-sm font-bold text-primary-300 dark:text-gray-700">
-                        Archer
-                    </div>
-                </div>
-
-                <div className="p-3 pb-6 flex flex-col md:flex-row items-center justify-between border-b-2 border-gray-300 text-left w-full max-w-2xl">
-                    <div className="font-bold text-primary-500 dark:text-white">
-                        Change password
-                    </div>
-                    <div className="flex flex-row gap-1.5 text-sm font-bold text-primary-300 dark:text-gray-700">
-                        *****
-                    </div>
-                </div>
-
-                <div className="p-3 pb-6 flex flex-col md:flex-row items-center justify-between border-b-2 border-gray-300 text-left w-full max-w-2xl">
-                    <div className="font-bold text-primary-500 dark:text-white">
-                        Show date of birth
-                    </div>
-                    <div className="flex flex-row gap-1.5 text-sm font-bold text-primary-300 dark:text-gray-700">
-                        Archer
-                    </div>
-                </div>
+                <SettingsItem title="Show date of birth" type="toggle" />
             </section>
         </>
     );
