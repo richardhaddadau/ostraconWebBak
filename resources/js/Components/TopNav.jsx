@@ -1,12 +1,31 @@
-import { Ostracon } from "@/Components/icons/Ostracon-Std";
 import React from "react";
+import { Ostracon, Settings } from "@/Components/icons/Ostracon-Std";
+import { Settings as SettingsActive } from "@/Components/icons/Ostracon-Active";
 
-const TopNav = () => {
+const TopNav = (props) => {
     return (
-        <nav className="flex flex-row items-center w-full h-14 bg-primary-500 dark:bg-black">
-            <a className=" cursor-pointer flex items-center justify-center w-16 min-h-full fill-white">
+        <nav className="flex flex-row items-center justify-between w-full h-14 bg-primary-500 dark:bg-black">
+            <a className="cursor-pointer flex items-center justify-center w-16 min-h-full fill-white">
                 <Ostracon size={30} />
             </a>
+            <div
+                className="cursor-pointer flex items-center justify-center w-16 min-h-full fill-white transition-all duration-300"
+                onClick={() => {
+                    props.setPage("settings");
+                }}
+            >
+                {props.page === "settings" ? (
+                    <SettingsActive
+                        size={20}
+                        style="fill-primary-300 hover:fill-primary-500 translate-all duration-500"
+                    />
+                ) : (
+                    <Settings
+                        size={20}
+                        style="fill-primary-300 hover:fill-primary-500 translate-all duration-500"
+                    />
+                )}
+            </div>
         </nav>
     );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navigation from "@/Components/Navigation";
 import { Moon, Sun } from "@/Components/icons/Ostracon-Std";
 
-const SideNav = ({ page }) => {
+const SideNav = (props) => {
     //States
     const [darkMode, setDarkMode] = useState(localStorage.theme === "dark");
 
@@ -18,7 +18,11 @@ const SideNav = ({ page }) => {
 
     return (
         <nav className="flex flex-col justify-between w-16 min-h-full bg-white dark:bg-primary-500 shadow-lg">
-            <Navigation page={page} />
+            <Navigation
+                page={props.page}
+                links={props.links}
+                setPage={props.setPage}
+            />
 
             <div className="py-6 flex justify-center w-full">
                 <a
