@@ -11,10 +11,12 @@ const TopNav = (props) => {
             <div
                 className="cursor-pointer flex items-center justify-center w-16 min-h-full fill-white transition-all duration-300"
                 onClick={() => {
-                    props.setPage("settings");
+                    props.mainScreen === "settings"
+                        ? props.changePage(null, false, true)
+                        : props.changePage("settings", true);
                 }}
             >
-                {props.page === "settings" ? (
+                {props.mainScreen === "settings" ? (
                     <SettingsActive
                         size={20}
                         style="fill-primary-300 hover:fill-primary-500 translate-all duration-500"

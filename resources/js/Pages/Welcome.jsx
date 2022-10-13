@@ -27,6 +27,25 @@ import GlobalScreen from "@/Pages/PageComponents/GlobalScreen";
 export default function Welcome(props) {
     //States
     const [currentPage, setCurrentPage] = useState("home");
+    const [mainScreen, setMainScreen] = useState("home");
+
+    const changePage = (
+        screen = null,
+        rememberPrevious = false,
+        recallPrevious = false
+    ) => {
+        const previousPage = localStorage.getItem("rememberPage")
+            ? localStorage.getItem("rememberPage")
+            : currentPage;
+
+        setMainScreen(recallPrevious ? previousPage : screen);
+
+        if (!rememberPrevious) {
+            setCurrentPage(screen);
+        } else {
+            localStorage.setItem("rememberPage", currentPage);
+        }
+    };
 
     const pages = {
         home: {
@@ -132,15 +151,15 @@ export default function Welcome(props) {
         <>
             <Head title="Welcome" />
             <div className="relative flex flex-col min-h-fit h-screen overflow-hidden">
-                <TopNav page={currentPage} setPage={setCurrentPage} />
+                <TopNav mainScreen={mainScreen} changePage={changePage} />
                 <div className="grow relative flex flex-row bg-base-light dark:bg-base-dark h-1">
                     <SideNav
-                        page={currentPage}
                         links={pages}
-                        setPage={setCurrentPage}
+                        mainScreen={mainScreen}
+                        changePage={changePage}
                     />
 
-                    {pages[currentPage].component}
+                    {pages[mainScreen].component}
                 </div>
             </div>
         </>

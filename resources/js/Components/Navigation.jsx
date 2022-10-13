@@ -24,7 +24,7 @@ const Navigation = (props) => {
         <section className="pt-8 flex flex-col gap-5 items-center w-full">
             {Object.keys(pageLinks).map((item) => {
                 let iconTint =
-                    props.page === item
+                    props.mainScreen === item
                         ? "fill-primary-500"
                         : "fill-primary-300";
 
@@ -36,11 +36,11 @@ const Navigation = (props) => {
                             iconTint
                         }
                         onClick={() => {
-                            props.setPage(item);
+                            props.changePage(item);
                         }}
                         key={item}
                     >
-                        {props.page === item
+                        {props.mainScreen === item
                             ? pageLinks[item].iconActive
                             : pageLinks[item].icon}
                     </div>

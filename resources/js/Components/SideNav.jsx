@@ -19,9 +19,9 @@ const SideNav = (props) => {
     return (
         <nav className="flex flex-col justify-between w-16 min-h-full bg-white dark:bg-primary-500 shadow-lg">
             <Navigation
-                page={props.page}
                 links={props.links}
-                setPage={props.setPage}
+                mainScreen={props.mainScreen}
+                changePage={props.changePage}
             />
 
             <div className="py-6 flex justify-center w-full">
