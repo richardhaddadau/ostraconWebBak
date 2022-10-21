@@ -27,12 +27,27 @@ const FeedScreen = (props) => {
                     </div>
 
                     <div
-                        className="pt-3 flex flex-row items-center gap-14 w-full"
+                        className="pt-3 flex flex-row items-center gap-20 w-full"
                         id="post-interactions"
                     >
-                        <Skeleton animation="wave" height={20} width={50} />
-                        <Skeleton animation="wave" height={20} width={50} />
-                        <Skeleton animation="wave" height={20} width={50} />
+                        <Skeleton
+                            variant="circular"
+                            animation="wave"
+                            height={25}
+                            width={25}
+                        />
+                        <Skeleton
+                            variant="circular"
+                            animation="wave"
+                            height={25}
+                            width={25}
+                        />
+                        <Skeleton
+                            variant="circular"
+                            animation="wave"
+                            height={25}
+                            width={25}
+                        />
                     </div>
                 </article>
 
