@@ -9,18 +9,26 @@ const FeedScreen = (props) => {
             <section className="py-6 px-4 flex flex-col items-center gap-4 grow overflow-y-auto">
                 <CreatePost />
 
-                <article className="p-5 flex flex-col bg-surface-light dark:bg-black rounded-2xl border border-white dark:border-black w-full max-w-2xl">
+                <article className="p-5 flex flex-col bg-surface-light dark:bg-primary-500 rounded-2xl border border-white dark:border-black w-full max-w-2xl">
                     <div className="pb-3 flex flex-col w-full">
-                        <Skeleton animation="wave" height={20} width={125} />
-                        <Skeleton animation="wave" height={15} width={200} />
+                        <Skeleton
+                            sx={{ bgcolor: "#71717a" }}
+                            height={20}
+                            width={125}
+                        />
+                        <Skeleton
+                            sx={{ bgcolor: "#71717a" }}
+                            height={15}
+                            width={200}
+                        />
                     </div>
 
                     <div
-                        className="-mt-1 dark:border-gray-700 text-primary-500 dark:text-gray-300 overflow-x-hidden"
+                        className="-mt-1 dark:border-zinc-700 text-primary-500 dark:text-zinc-300 overflow-x-hidden"
                         id="post-body"
                     >
                         <Skeleton
-                            animation="wave"
+                            sx={{ bgcolor: "#71717a" }}
                             height={100}
                             width={"100%"}
                         />
@@ -31,20 +39,20 @@ const FeedScreen = (props) => {
                         id="post-interactions"
                     >
                         <Skeleton
+                            sx={{ bgcolor: "#71717a" }}
                             variant="circular"
-                            animation="wave"
                             height={25}
                             width={25}
                         />
                         <Skeleton
+                            sx={{ bgcolor: "#71717a" }}
                             variant="circular"
-                            animation="wave"
                             height={25}
                             width={25}
                         />
                         <Skeleton
+                            sx={{ bgcolor: "#71717a" }}
                             variant="circular"
-                            animation="wave"
                             height={25}
                             width={25}
                         />

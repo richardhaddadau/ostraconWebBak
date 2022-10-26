@@ -41,6 +41,7 @@ module.exports = {
                 "base-light": "#E7E7E7",
 
                 "surface-light": "#F7F7F7",
+                "surface-dark": "#393939",
             },
         },
     },

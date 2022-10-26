@@ -6,7 +6,7 @@ const TopNav = (props) => {
     return (
         <nav className="flex flex-row items-center justify-between w-full h-14 bg-primary-500 dark:bg-black">
             <a className="cursor-pointer flex items-center justify-center w-16 min-h-full fill-white">
-                <Ostracon size={30} />
+                <Ostracon size={30} color="white" />
             </a>
             <div
                 className="cursor-pointer flex items-center justify-center w-16 min-h-full fill-white transition-all duration-300"

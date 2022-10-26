@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Avatar } from "@mui/material";
 
 const CreatePost = () => {
     // States
@@ -54,11 +55,15 @@ const CreatePost = () => {
     };
 
     return (
-        <article className="p-5 flex flex-col bg-surface-light dark:bg-black rounded-2xl border border-white dark:border-black w-full max-w-2xl">
-            <div id="new-post-wrapper">
+        <article className="p-5 flex flex-col bg-surface-light dark:bg-primary-500 rounded-2xl border border-white dark:border-black w-full max-w-2xl">
+            <div
+                id="new-post-wrapper"
+                className="mb-2 flex flex-row gap-2 items-center"
+            >
+                <Avatar sx={{ width: 50, height: 50 }}>SA</Avatar>
                 <div
                     id="new-post-text"
-                    className="border-0 outline-0 resize-none h-fit max-h-52 text-primary-500 dark:text-white overflow-y-auto"
+                    className="px-2 py-1 grow border-0 outline-0 resize-none h-fit max-h-52 text-primary-500 dark:text-white overflow-y-auto"
                     onInput={(el) => {
                         processMentions(el.target.innerText);
 
